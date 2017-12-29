@@ -3,6 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const volleyball = require('volleyball');
 const bodyParser = require('body-parser');
+const where = require('node-where');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const userRecord = require('./db.js');
@@ -14,11 +15,19 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(bodyParser.json());
+app.use(function(req, res, next) {
+ where.is(req.ip, function(err, result) {
+   req.geoip = result;
+   next();
+ });
+});
 app.use('/api', require('./api/router.js'))
 
 app.get('/', (req, res) => {
   userRecord.find()
   .then((data) => {
+    const location = req.geoip;
+    console.log(location);
     res.render('index', {data});
   })
 })
