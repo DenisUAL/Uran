@@ -13,7 +13,7 @@ example ru/en), using middleware.
 dump of your data and describe how to deploy.
 7) Use only stable versions of Node.js, MongoDB, and third-party packages.
 
-# To start:
+# To start  (assuming that mongodb already installed):
 
 - cd into project directory
 - npm install
