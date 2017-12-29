@@ -35,3 +35,7 @@ p {
   padding-bottom: 15px !important;
   border-radius: 5px;
 }
+
+.test{
+  width: 100%;
+}
