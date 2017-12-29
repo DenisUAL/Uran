@@ -16,10 +16,12 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 app.use(function(req, res, next) {
- where.is(req.connection.remoteAddress, function(err, result) {
-   req.geoip = result;
-   next();
- });
+  const IP = req.connection.remoteAddress;
+  console.log(IP, 'this is IP <-----------')
+  where.is(IP, function(err, result) {
+    req.geoip = result;
+    next();
+  });
 });
 app.use('/api', require('./api/router.js'))
 
