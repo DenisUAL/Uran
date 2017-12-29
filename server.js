@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 app.use(function(req, res, next) {
- where.is(req.ip, function(err, result) {
+ where.is(req.connection.remoteAddress, function(err, result) {
    req.geoip = result;
    next();
  });
