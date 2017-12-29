@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 app.use(function(req, res, next) {
-  const IP = req.connection.remoteAddress;
+  const IP = req.connection.remoteAddress.slice(7);
   console.log(IP, 'this is IP <-----------')
   where.is(IP, function(err, result) {
     req.geoip = result;
