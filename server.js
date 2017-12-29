@@ -3,7 +3,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const volleyball = require('volleyball');
 const bodyParser = require('body-parser');
-const where = require('node-where');
+const geoip2 = require('geoip2');
+geoip2.init();
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const userRecord = require('./db.js');
@@ -15,20 +16,22 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(bodyParser.json());
-app.use(function(req, res, next) {
-  const IP = req.connection.remoteAddress.slice(7);
-  console.log(IP, 'this is IP <-----------')
-  where.is(IP, function(err, result) {
-    req.geoip = result;
-    next();
-  });
-});
 app.use('/api', require('./api/router.js'))
 
 app.get('/', (req, res) => {
   userRecord.find()
   .then((data) => {
-    const location = req.geoip;
+    let location;
+    const IP = req.connection.remoteAddress.slice(7);
+    console.log(IP, 'this is IP <-----------')
+    geoip2.lookupSimple(IP, function(error, result) {
+      if (error) {
+        console.log("Error: %s", error);
+      }
+      else if (result) {
+        location = result;
+      }
+    });
     console.log(location);
     res.render('index', {data});
   })

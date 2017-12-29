@@ -13,8 +13,8 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "geoip2": "^1.0.5",
     "mongoose": "^5.0.0-rc0",
-    "node-where": "^1.1.0",
     "pug": "^2.0.0-rc.4",
     "volleyball": "^1.4.1"
   },
