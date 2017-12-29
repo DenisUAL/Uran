@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
   userRecord.find()
   .then((data) => {
     let location;
-    const IP = req.connection.remoteAddress.slice(7);
+    const IP = req.ip;
     console.log(IP, 'this is IP <-----------')
     geoip2.lookupSimple(IP, function(error, result) {
       if (error) {
@@ -30,9 +30,9 @@ app.get('/', (req, res) => {
       }
       else if (result) {
         location = result;
+        console.log(location);
       }
     });
-    console.log(location);
     res.render('index', {data});
   })
 })
