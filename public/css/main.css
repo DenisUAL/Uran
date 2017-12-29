@@ -1,0 +1,37 @@
+body {
+  text-align: center;
+  height: 100vh;
+  background: linear-gradient(rgb(0, 81, 255), #2E8B57);
+}
+
+h2 {
+  color: white;
+  text-shadow: black 3px 3px 15px;
+}
+
+img {
+  height: 100px;
+  width: 80px;
+}
+
+p {
+  color: white;
+  font-style: italic;
+}
+
+.entry {
+  padding: 5px;
+  background-color: #fbfbfb2e;
+  color: white;
+  border: 1px solid black;
+  border: solid #ffffff59 1px;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.box {
+  background-color: #0011ff73;
+  box-shadow: 0px 0px 20px 0px white;
+  padding-bottom: 15px !important;
+  border-radius: 5px;
+}

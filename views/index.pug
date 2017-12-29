@@ -1,0 +1,53 @@
+doctype html
+html(lang = "en")
+  head
+    title URAN_test_task
+    link(rel = 'stylesheet', href= '/static/css/main.css')
+    link(rel = 'stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css')
+    script(src = 'https://code.jquery.com/jquery-3.2.1.min.js')
+    script(src = 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js')
+
+  body
+    div.container
+      div.row
+        div.col.s12
+           h2 Database demo
+           img(src = '/static/images/mongodb-logo.png')
+      div.row
+        div.col.s3.box
+          p Add Record
+          form(method = 'POST', action = '/api/insert')
+            input(name = 'name', id = 'name', type = 'text', placeholder = 'name')
+            input(name = 'email', id = 'email', type = 'email', placeholder = 'email')
+            input(type = 'submit')
+        div.col.s1
+        div.col.s4.box
+          p Update Record
+          form(method = 'POST' action = '/api/update')
+            input(name = 'id', id = 'id', type = 'text', placeholder = 'id')
+            input(name = 'name', id = 'name', type = 'text', placeholder = 'name')
+            input(name = 'email', id = 'email', type = 'email', placeholder = 'email')
+            input(type = 'submit')
+
+        div.col.s1
+        div.col.s3.box
+          p Delete Record
+          form(method = 'POST', action = '/api/delete')
+            input(name = 'id', id = 'id', type = 'text', placeholder = 'id')
+            input(type = 'submit')
+
+      div.row
+        div.col.s12.box
+          p All Records
+          table
+            tr.entry
+              th.entry Id
+              th.entry Name
+              th.entry Email
+            if data
+              each entry in data
+                tr.entry
+                  td.entry #{entry._id}
+                  td.entry #{entry.name}
+                  td.entry #{entry.email}
+

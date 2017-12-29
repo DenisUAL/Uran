@@ -1,0 +1,23 @@
+{
+  "name": "URAN_test_task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "Denys Andreiev",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.0-rc0",
+    "pug": "^2.0.0-rc.4",
+    "volleyball": "^1.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.3"
+  }
+}
