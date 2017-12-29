@@ -15,7 +15,7 @@ dump of your data and describe how to deploy.
 
 # To start:
 
-- cd into progect directory
+- cd into project directory
 - npm install
 - npm start
 - open browser at http://localhost:3000/
