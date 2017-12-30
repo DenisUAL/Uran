@@ -1,5 +1,8 @@
 # Uran
 
+# Node v8.1.3
+# npm v5.6.0
+
 Demo application for Uran company.
 
 Requirements:

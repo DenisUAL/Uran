@@ -11,40 +11,54 @@ html(lang = "en")
   body
     div.container
       div.row
+        div.col.s4
+        div.col.s1
+          a(href="/api/en")
+            p.langOption English
+        div.col.s1
+          a(href="/api/ru", class= 'langOption')
+            p.langOption Русский
+        div.col.s1
+          a(href="/api/ua", class= 'langOption')
+            p.langOption Українська
+        div.col.s1
+          a(href="/api/de", class= 'langOption')
+            p.langOption Deutsch
+      div.row
         div.col.s12
-           h2 Database demo
+           h2 #{langOption.__("Database demo")}
            img(src = '/static/images/mongodb-logo.png')
       div.row
         div.col.s3.box
-          p Add Record
+          p #{langOption.__("Add Record")}
           form(method = 'POST', action = '/api/insert')
-            input(name = 'name', id = 'name', type = 'text', placeholder = 'name')
-            input(name = 'email', id = 'email', type = 'email', placeholder = 'email')
-            input(type = 'submit')
+            input(name = 'name', id = 'name', type = 'text', placeholder = langOption.__("Name"))
+            input(name = 'email', id = 'email', type = 'email', placeholder = langOption.__("Email"))
+            input(type = 'submit', value = langOption.__("Submit"))
         div.col.s1
         div.col.s4.box
-          p Update Record
+          p #{langOption.__("Update Record")}
           form(method = 'POST' action = '/api/update')
-            input(name = 'id', id = 'id', type = 'text', placeholder = 'id')
-            input(name = 'name', id = 'name', type = 'text', placeholder = 'name')
-            input(name = 'email', id = 'email', type = 'email', placeholder = 'email')
-            input(type = 'submit')
+            input(name = 'id', id = 'id', type = 'text', placeholder = langOption.__("Id"))
+            input(name = 'name', id = 'name', type = 'text', placeholder = langOption.__("Name"))
+            input(name = 'email', id = 'email', type = 'email', placeholder = langOption.__("Email"))
+            input(type = 'submit', value = langOption.__("Submit"))
 
         div.col.s1
         div.col.s3.box
-          p Delete Record
+          p #{langOption.__("Delete Record")}
           form(method = 'POST', action = '/api/delete')
-            input(name = 'id', id = 'id', type = 'text', placeholder = 'id')
-            input(type = 'submit')
+            input(name = 'id', id = 'id', type = 'text', placeholder = langOption.__("Id"))
+            input(type = 'submit', value = langOption.__("Submit"))
 
       div.row
         div.col.s12.box
-          p All Records
+          p #{langOption.__("All Records")}
           table
             tr.entry
-              th.entry Id
-              th.entry Name
-              th.entry Email
+              th.entry #{langOption.__("Id")}
+              th.entry #{langOption.__("Name")}
+              th.entry #{langOption.__("Email")}
             if data
               each entry in data
                 tr.entry

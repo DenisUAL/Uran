@@ -36,4 +36,24 @@ router.post('/delete', (req, res) => {
   res.redirect('/');
 })
 
+router.get('/en', function (req, res) {
+  res.cookie('langOption', 'en');
+  res.redirect('/')
+});
+
+router.get('/ru', function (req, res) {
+  res.cookie('langOption', 'ru');
+  res.redirect('/')
+});
+
+router.get('/ua', function (req, res) {
+  res.cookie('langOption', 'ua');
+  res.redirect('/')
+});
+
+router.get('/de', function (req, res) {
+  res.cookie('langOption', 'de');
+  res.redirect('/')
+});
+
 module.exports = router;
