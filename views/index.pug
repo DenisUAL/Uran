@@ -11,19 +11,20 @@ html(lang = "en")
   body
     div.container
       div.row
-        div.col.s4
-        div.col.s1
+        div.col.s2
+        div.col.s2
           a(href="/api/en")
             p.langOption English
-        div.col.s1
-          a(href="/api/ru", class= 'langOption')
+        div.col.s2
+          a(href="/api/ru")
             p.langOption Русский
-        div.col.s1
-          a(href="/api/ua", class= 'langOption')
+        div.col.s2
+          a(href="/api/ua")
             p.langOption Українська
-        div.col.s1
-          a(href="/api/de", class= 'langOption')
+        div.col.s2
+          a(href="/api/de")
             p.langOption Deutsch
+        div.col.s2
       div.row
         div.col.s12
            h2 #{langOption.__("Database demo")}
