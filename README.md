@@ -5,6 +5,8 @@
 
 Demo application for Uran company.
 
+Deployed at https://frozen-island-97960.herokuapp.com/
+
 Requirements:
 1) Use MongoDB as a database.
 2) All landing content must be kept in the database.

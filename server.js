@@ -17,17 +17,21 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(cookieParser("i18n_demo"));
 app.use(session({
-    secret: "i18n_demo",
-    resave: true,
-    saveUninitialized: true,
-    cookie: { maxAge: 60000 }
+  secret: "i18n_demo",
+  resave: true,
+  saveUninitialized: true,
+  cookie: {
+    maxAge: 60000
+  }
 }));
 i18n.configure({
-  locales:['en', 'ru', 'ua', 'de'],
+  locales: [
+    'en', 'ru', 'ua', 'de'
+  ],
   directory: __dirname + '/locales',
   defaultLocale: 'en',
   cookie: 'langOption'
-  });
+});
 app.use(i18n.init);
 app.use('/api', require('./api/router.js'));
 
