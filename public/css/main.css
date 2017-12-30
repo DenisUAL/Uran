@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html{
   min-width: 600px;
 }
@@ -5,7 +9,7 @@ html{
 body {
   text-align: center;
   height: 100vh;
-  background: linear-gradient(rgb(0, 62, 187), rgb(38, 119, 73));
+  background: linear-gradient(rgb(108, 146, 222), rgb(37, 37, 37));
 }
 
 h2 {
@@ -35,7 +39,7 @@ p {
 }
 
 .box {
-  background-color: #0011ff73;
+  background-color: #0011ff14;
   box-shadow: 0px 0px 20px 0px white;
   padding-bottom: 15px !important;
   border-radius: 5px;
